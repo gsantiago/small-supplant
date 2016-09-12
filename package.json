@@ -1,6 +1,7 @@
 {
   "name": "small-supplant",
   "version": "0.0.1",
+  "description": "Small supplant for template strings",
   "repository": {
     "type": "git",
     "url": "https://github.com/gsantiago/small-supplant"
