@@ -15,6 +15,7 @@
   ],
   "author": "Guilherme Santiago",
   "license": "MIT",
+  "main": "small-supplant.js",
   "scripts": {
     "test": "standard index.js && mocha",
     "browserify": "browserify small-supplant.js -s supplant -o browser/small-supplant.browser.js",
