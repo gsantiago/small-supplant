@@ -4,14 +4,7 @@ module.exports = supplant
 
 function supplant (str, data) {
   return str.replace(supplant.delimiters, function (matched, keypath) {
-    try {
-      var value = getProp(data, keypath.trim())
-      return value === undefined
-        ? matched
-        : value
-    } catch (e) {
-      return matched
-    }
+    return supplant.transform.call(this, matched, keypath, data)
   })
 }
 
@@ -41,3 +34,14 @@ Object.defineProperty(supplant, 'delimiters', {
 })
 
 supplant.delimiters = ['{{', '}}']
+
+supplant.transform = function (matched, keypath, data) {
+  try {
+    var value = getProp(data, keypath.trim())
+    return value === undefined
+      ? matched
+      : value
+  } catch (e) {
+    return matched
+  }
+}
