@@ -1,7 +1,13 @@
 var supplant = require('..')
 var expect = require('expect')
+var originalTransform = supplant.transform
 
 describe('Supplant', function () {
+  beforeEach(function () {
+    supplant.delimiters = ['{{', '}}']
+    supplant.transform = originalTransform
+  })
+
   it('should replace the name', function () {
     var str = 'Hello, {{name}}!'
     var result = supplant(str, {name: 'John'})
@@ -91,6 +97,17 @@ describe('Supplant', function () {
         }
       })
       var expected = 'I hate YOU!!!'
+      expect(result).toEqual(expected)
+    })
+  })
+
+  describe('Custom transforms', function () {
+    it('should use the evil `eval`', function () {
+      supplant.transform = function (matched, value, data) {
+        return eval(value)
+      }
+      var result = supplant('result is {{ 2 * 5 }}')
+      var expected = 'result is 10'
       expect(result).toEqual(expected)
     })
   })
