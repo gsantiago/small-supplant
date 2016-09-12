@@ -1,0 +1,31 @@
+{
+  "name": "small-supplant",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gsantiago/small-supplant"
+  },
+  "keywords": [
+    "supplant",
+    "string",
+    "template",
+    "replace",
+    "small",
+    "delimiters"
+  ],
+  "author": "Guilherme Santiago",
+  "license": "MIT",
+  "scripts": {
+    "test": "standard index.js && mocha",
+    "browserify": "browserify small-supplant.js -s supplant -o browser/small-supplant.browser.js",
+    "uglify": "uglifyjs browser/small-supplant.browser.js -c -o browser/small-supplant.browser.min.js",
+    "build": "npm run browserify && npm run uglify"
+  },
+  "devDependencies": {
+    "browserify": "^13.1.0",
+    "expect": "^1.20.2",
+    "mocha": "^3.0.2",
+    "standard": "^8.0.0",
+    "uglify-js": "^2.7.3"
+  }
+}
