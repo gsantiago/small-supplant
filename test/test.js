@@ -32,6 +32,13 @@ describe('Supplant', function () {
     expect(result).toEqual(expected)
   })
 
+  it('should return the expression itself', function () {
+    var str = 'It {{foo.barz}} does not exist, but {{bar}} does!'
+    var result = supplant(str, {bar: 'bar property'})
+    var expected = 'It {{foo.barz}} does not exist, but bar property does!'
+    expect(result).toEqual(expected)
+  })
+
   describe('Custom delimiters', function () {
     it('should support {delimiters}', function () {
       supplant.delimiters = ['{', '}']

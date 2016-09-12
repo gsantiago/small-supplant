@@ -1,8 +1,17 @@
+'use strict'
+
 module.exports = supplant
 
 function supplant (str, data) {
   return str.replace(supplant.delimiters, function (matched, keypath) {
-    return getProp(data, keypath.trim())
+    try {
+      var value = getProp(data, keypath.trim())
+      return value === undefined
+        ? matched
+        : value
+    } catch (e) {
+      return matched
+    }
   })
 }
 
