@@ -1,6 +1,6 @@
 {
   "name": "small-supplant",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Small supplant for template strings",
   "repository": {
     "type": "git",
