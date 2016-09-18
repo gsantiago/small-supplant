@@ -50,7 +50,7 @@ in the `browser` folder, and include it into your page.
 ## browser support
 
 | <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/chrome/chrome.png" width="48" height="48"> | <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/firefox/firefox.png" width="48" height="48"> | <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/internet-explorer/internet-explorer.png" width="48" height="48"> | <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/opera/opera.png" width="48" height="48"> | <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/safari/safari.png" width="48" height="48"> |
-| --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | <div align="center">✔</div> | <div align="center">✔</div> | <div align="center">+IE9 ✔</div> | <div align="center">✔</div> | <div align="center">✔</div> |
 
 ## license
