@@ -18,7 +18,7 @@
   "license": "MIT",
   "main": "small-supplant.js",
   "scripts": {
-    "test": "standard index.js && mocha",
+    "test": "standard small-supplant.js && mocha",
     "browserify": "browserify small-supplant.js -s supplant -o browser/small-supplant.browser.js",
     "uglify": "uglifyjs browser/small-supplant.browser.js -c -o browser/small-supplant.browser.min.js",
     "build": "npm run browserify && npm run uglify"
