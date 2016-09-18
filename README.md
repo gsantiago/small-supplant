@@ -7,8 +7,8 @@
 Small module that does variable replacement in strings:
 
 ```js
-supplant('Hello, {{ name }}!', {name: 'Dragon'})
-// Hello, Dragon
+supplant('Hello, {{ name }}!', {name: 'John'})
+// Hello, John
 ```
 
 It also supports deep properties:
@@ -36,24 +36,23 @@ supplant('I love <?= language ?>!', {language: 'PHP'}) // I love PHP!
 
 And nothing else. Just it!
 
-## Installation
+## installation
 
 `npm install small-supplant --save`
 
 For browsers, you can copy the `small-supplant.browser.js`
 in the `browser` folder, and include it into your page.
 
+## tests
 
-## Tests
+`npm install && npm test`
 
-Make sure you have the devDependencies installed:
+## browser support
 
-`npm install`
+| <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/chrome/chrome.png" width="48" height="48"> | <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/firefox/firefox.png" width="48" height="48"> | <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/internet-explorer/internet-explorer.png" width="48" height="48"> | <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/opera/opera.png" width="48" height="48"> | <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/safari/safari.png" width="48" height="48">
+| --- | --- | --- |
+| <div align="center">✔</div> | <div align="center">✔</div> | <div align="center">+IE9 ✔</div> | <div align="center">✔</div> | <div align="center">✔</div> |
 
-Then, just run:
-
-`npm test`
-
-## License
+## license
 
 MIT
