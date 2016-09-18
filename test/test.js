@@ -1,5 +1,5 @@
 var supplant = require('..')
-var expect = require('expect')
+var assert = require('assert')
 var originalTransform = supplant.transform
 
 describe('Supplant', function () {
@@ -12,7 +12,7 @@ describe('Supplant', function () {
     var str = 'Hello, {{name}}!'
     var result = supplant(str, {name: 'John'})
     var expected = 'Hello, John!'
-    expect(result).toEqual(expected)
+    assert.strictEqual(result, expected)
   })
 
   it('should replace the attributes values', function () {
@@ -23,7 +23,7 @@ describe('Supplant', function () {
       name: 'USER NAME'
     })
     var expected = '<a href="mailto:user@email.com" class="link primary">USER NAME</a>'
-    expect(result).toEqual(expected)
+    assert.strictEqual(result, expected)
   })
 
   it('should support deep properties', function () {
@@ -35,14 +35,14 @@ describe('Supplant', function () {
       }
     })
     var expected = '<li>Clark Kent - contact@clark-kent.com</li>'
-    expect(result).toEqual(expected)
+    assert.strictEqual(result, expected)
   })
 
   it('should return the expression itself', function () {
     var str = 'It {{foo.barz}} does not exist, but {{bar}} does!'
     var result = supplant(str, {bar: 'bar property'})
     var expected = 'It {{foo.barz}} does not exist, but bar property does!'
-    expect(result).toEqual(expected)
+    assert.strictEqual(result, expected)
   })
 
   describe('Custom delimiters', function () {
@@ -51,7 +51,7 @@ describe('Supplant', function () {
       var str = '1 + 1 = {result}'
       var result = supplant(str, {result: 2})
       var expected = '1 + 1 = 2'
-      expect(result).toEqual(expected)
+      assert.strictEqual(result, expected)
     })
 
     it('should support ${delimiters}', function () {
@@ -63,7 +63,7 @@ describe('Supplant', function () {
         }
       })
       var expected = 'Hello, mr. Batman!'
-      expect(result).toEqual(expected)
+      assert.strictEqual(result, expected)
     })
 
     it('should support @[delimiters]', function () {
@@ -75,7 +75,7 @@ describe('Supplant', function () {
         }
       }})
       var expected = 'Primary skill: NONE'
-      expect(result).toEqual(expected)
+      assert.strictEqual(result, expected)
     })
 
     it('should support <?= delimiters ?>', function () {
@@ -85,7 +85,7 @@ describe('Supplant', function () {
         language: 'PHP'
       })
       var expected = 'I like the PHP language!'
-      expect(result).toEqual(expected)
+      assert.strictEqual(result, expected)
     })
 
     it('should support #(delimiters)', function () {
@@ -97,7 +97,7 @@ describe('Supplant', function () {
         }
       })
       var expected = 'I hate YOU!!!'
-      expect(result).toEqual(expected)
+      assert.strictEqual(result, expected)
     })
   })
 
@@ -108,7 +108,7 @@ describe('Supplant', function () {
       }
       var result = supplant('result is {{ 2 * 5 }}')
       var expected = 'result is 10'
-      expect(result).toEqual(expected)
+      assert.strictEqual(result, expected)
     })
   })
 })
